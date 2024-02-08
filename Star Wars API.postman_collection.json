@@ -1,0 +1,84 @@
+{
+	"info": {
+		"_postman_id": "a37ac576-e70d-4a1d-82e5-79979d4b50b2",
+		"name": "Star Wars API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23587836",
+		"_collection_link": "https://red-firefly-500218.postman.co/workspace/Estudos-EBAC~e3b1a2ce-1de1-42ff-b5ac-210348b4fbb0/collection/23587836-a37ac576-e70d-4a1d-82e5-79979d4b50b2?action=share&source=collection_link&creator=23587836"
+	},
+	"item": [
+		{
+			"name": "{{prod}}people/2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Validar status code\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Validar o nome do personagem\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"C-3PO\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{prod}}people/2",
+					"host": [
+						"{{prod}}people"
+					],
+					"path": [
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar Personagem 1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://swapi.dev/api/people/1/",
+					"protocol": "https",
+					"host": [
+						"swapi",
+						"dev"
+					],
+					"path": [
+						"api",
+						"people",
+						"1",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar Personagem 2",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{dev}}people/2",
+					"host": [
+						"{{dev}}people"
+					],
+					"path": [
+						"2"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
